@@ -9,13 +9,15 @@ class App extends Component {
       { name: 'Max', age: Math.floor(Math.random() * 30) },
       { name: 'Megha', age: Math.floor(Math.random() * 30) },
     ],
+    other: 'Other Properties',
+    toggle: false,
   };
 
   switchHandler = (newName) => {
     // console.log('Clicked!');
     this.setState({
       persons: [
-        { name: newName, age: Math.floor(Math.random() * 30) },
+        { name: 'Jane', age: Math.floor(Math.random() * 30) },
         { name: 'Max', age: Math.floor(Math.random() * 30) },
         { name: 'Megha', age: Math.floor(Math.random() * 30) },
       ],
@@ -26,7 +28,7 @@ class App extends Component {
     // console.log('Clicked!');
     this.setState({
       persons: [
-        { name: 'Jane', age: Math.floor(Math.random() * 30) },
+        { name: event.target.value, age: Math.floor(Math.random() * 30) },
         { name: event.target.value, age: Math.floor(Math.random() * 30) },
         { name: 'Megha', age: Math.floor(Math.random() * 30) },
       ],
@@ -34,21 +36,40 @@ class App extends Component {
   };
 
   render() {
+    const style = {
+      backgroundColor: '#EF7C8E',
+      color: '#EEE',
+      borderRadius: '5px',
+      padding: '5px 15px',
+    };
+
     return (
       <div className='App'>
         <h1>Welcome to React</h1>
         <p>
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <button onClick={this.switchHandler.bind(this, 'Jane has changed!')}>Switch Name</button>
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
-        <Person
-          name={this.state.persons[1].name}
-          age={this.state.persons[1].age}
-          click={this.switchHandler.bind(this, 'Max has changed!')}
-          change={this.changeHandler}
-        />
-        <Person name={this.state.persons[2].name} age={this.state.persons[2].age} />
+        <button style={style} onClick={this.switchHandler}>
+          Switch Name
+        </button>
+        <div>
+          <Person
+            name={this.state.persons[0].name}
+            age={this.state.persons[0].age}
+            change={this.changeHandler}
+          />
+          <Person
+            name={this.state.persons[1].name}
+            age={this.state.persons[1].age}
+            click={this.switchHandler.bind(this, 'Max has changed!')}
+            change={this.changeHandler}
+          />
+          <Person
+            name={this.state.persons[2].name}
+            age={this.state.persons[2].age}
+            change={this.changeHandler}
+          />
+        </div>
       </div>
     );
     /* return React.createElement(
