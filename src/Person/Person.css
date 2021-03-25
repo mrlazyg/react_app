@@ -5,4 +5,11 @@
   box-shadow: 0 2px 3px #ccc;
   padding: 16px;
   text-align: center;
+  background-color: #ffddd2;
+  border-radius: 5px;
+}
+
+input {
+  border-radius: 5px;
+  color: #d80032;
 }
