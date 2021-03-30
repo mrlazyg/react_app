@@ -42,7 +42,7 @@ class App extends Component {
   };
 
   render() {
-    const style = {
+    /* const style = {
       backgroundColor: '#EF7C8E',
       color: '#EEE',
       cursor: 'pointer',
@@ -52,7 +52,7 @@ class App extends Component {
         backgroundColor: 'white',
         color: 'black',
       },
-    };
+    }; */
 
     let person = null;
     if (this.state.showPerson) {
@@ -87,11 +87,11 @@ class App extends Component {
           /> */}
         </div>
       );
-      style.backgroundColor = '#025955';
+      /* style.backgroundColor = '#025955';
       style[':hover'] = {
         backgroundColor: 'black',
         color: 'white',
-      };
+      }; */
     }
 
     return (
@@ -100,17 +100,12 @@ class App extends Component {
         <p>
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <button style={style} onClick={this.togglePerson}>
+        <button className='button' onClick={this.togglePerson}>
           Toggle Name
         </button>
         {person}
       </div>
     );
-    /* return React.createElement(
-      'div',
-      { className: 'App' },
-      React.createElement('h1', null, "Hi, I'm from React")
-    ); */
   }
 }
 
