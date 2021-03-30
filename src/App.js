@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -95,12 +95,12 @@ class App extends Component {
     }
 
     return (
-      <div className='App'>
+      <div className={classes.App}>
         <h1>Welcome to React</h1>
         <p>
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <button className='button' onClick={this.togglePerson}>
+        <button className={classes.Button} onClick={this.togglePerson}>
           Toggle Name
         </button>
         {person}

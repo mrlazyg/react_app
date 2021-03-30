@@ -3,7 +3,7 @@
   text-align: center;
 }
 
-.button {
+.Button {
   background-color: #ef7c8e;
   color: #eee;
   cursor: pointer;
@@ -11,7 +11,7 @@
   padding: 5px 15px;
 }
 
-.button:hover {
+.Button:hover {
   background-color: white;
   color: black;
 }
