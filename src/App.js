@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Radium from 'radium';
 import './App.css';
 import Person from './Person/Person';
 
@@ -46,6 +45,7 @@ class App extends Component {
     const style = {
       backgroundColor: '#EF7C8E',
       color: '#EEE',
+      cursor: 'pointer',
       borderRadius: '5px',
       padding: '5px 15px',
       ':hover': {
@@ -114,4 +114,4 @@ class App extends Component {
   }
 }
 
-export default Radium(App);
+export default App;
