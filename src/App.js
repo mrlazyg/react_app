@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
+import data from './data.json';
 import classes from './App.css';
-import Person from './Person/Person';
+import Persons from './components/Persons/Persons';
 
 class App extends Component {
-  state = {
-    persons: [
-      { id: 'uiique', name: 'Jane', age: Math.floor(Math.random() * 30) },
-      { id: 'jhdajd', name: 'Max', age: Math.floor(Math.random() * 30) },
-      { id: 'jahdsg', name: 'Megha', age: Math.floor(Math.random() * 30) },
-    ],
-    other: 'Other Properties',
-    showPerson: false,
-  };
+  state = data;
 
   /* switchHandler = (newName) => {
     // console.log('Clicked!');
@@ -58,33 +51,7 @@ class App extends Component {
     if (this.state.showPerson) {
       person = (
         <div>
-          {this.state.persons.map((p, index) => {
-            return (
-              <Person
-                key={p.id || index}
-                name={p.name}
-                age={p.age}
-                change={(event) => this.changeHandler(event, p.id)}
-                // click={this.switchHandler.bind(this, 'Max has changed!')}
-              />
-            );
-          })}
-          {/* <Person
-            name={this.state.persons[0].name}
-            age={this.state.persons[0].age}
-            change={this.changeHandler}
-          />
-          <Person
-            name={this.state.persons[1].name}
-            age={this.state.persons[1].age}
-            click={this.switchHandler.bind(this, 'Max has changed!')}
-            change={this.changeHandler}
-          />
-          <Person
-            name={this.state.persons[2].name}
-            age={this.state.persons[2].age}
-            change={this.changeHandler}
-          /> */}
+          <Persons persons={this.state.persons} changed={this.changeHandler} />
         </div>
       );
       /* style.backgroundColor = '#025955';
