@@ -4,7 +4,17 @@ import classes from './App.css';
 import Persons from './components/Persons/Persons';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    console.log('App.js console');
+  }
+
   state = data;
+
+  static getDerivedStateFromProps(props, state) {
+    console.log('getDerivedStateFromProps', props);
+    return state;
+  }
 
   /* switchHandler = (newName) => {
     // console.log('Clicked!');
