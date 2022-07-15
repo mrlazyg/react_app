@@ -1,9 +1,0 @@
-{
-  "persons": [
-    { "id": "uiique", "name": "Jane", "age": 25 },
-    { "id": "jhdajd", "name": "Max", "age": 22 },
-    { "id": "jahdsg", "name": "Megha", "age": 27 }
-  ],
-  "other": "Other Properties",
-  "showPerson": false
-}
